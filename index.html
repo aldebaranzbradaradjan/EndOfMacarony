@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='icon' type='image/icon' href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="How many days to wait before the end of Macron's mandate ?">
+
+    <title>Fin de la macronie ?</title>
+    
+    <style>
+
+      html, body, main {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: clip;
+      }
+
+      body {
+        background-color: black;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+      }
+
+      h1 {
+        margin: auto;
+        color: whitesmoke;
+        text-align: center;
+      }
+
+      .picture {
+        height: 50%;
+      } 
+
+    </style>
+
+    <script>
+      
+      window.onload = function () {
+        var one_day = 1000 * 60 * 60 * 24
+        var present_date = new Date()
+        var end_of_macrony_day = new Date(2027, 3, 24)
+        var days = (Math.round(end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
+        var res;
+
+        if (days <= 0) res = "Enfin !"
+        else res = "Pas de chance !</br>Il reste encore : " + days + (days !== 1 ? " jours." : "jour.")
+
+        document.getElementsByTagName("h1")[0].innerHTML = res
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <header></header>
+    <main>
+
+      <h1>Fin de la macronie dans : 1885 jours</h1>
+
+      <img class="picture"
+        src="images/macron.jpg"
+        alt="Emmanuel Macron assis, avec une expression pleine de panache.">
+
+    </main>
+    <footer></footer>
+  </body>
+</html>
