@@ -48,12 +48,27 @@
       window.onload = function () {
         var one_day = 1000 * 60 * 60 * 24
         var present_date = new Date()
-        var end_of_macrony_day = new Date(2027, 5, 14, 20, 0, 0) // new Date(2027, 3, 25)
+        var end_of_macrony_day = new Date(2027, 5, 14, 20, 0, 0)
+        var fast_mini_end_of_macrony_day = new Date(2024, 6, 30, 20, 0, 0)
+        var mini_end_of_macrony_day = new Date(2024, 7, 7, 20, 0, 0)
         var days = (Math.round(end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
+        var fast_mini_days = (Math.round(end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
+        var mini_days = (Math.round(end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
         var res;
 
-        if (days <= 0) res = "Enfin !"
-        else res = "Pas de chance !</br>Il reste encore : " + days + (days !== 1 ? " jours." : "jour.")
+        var good_result = true
+        
+        if (days <= 0) {
+          res = "Enfin ! C'est fini, débouchez le champagne !\nCeci dit, ça dépend qui le remplace, j'espère que..."
+            + (good_result ? "Ah en fait ça va !" : "Ah m***e !")
+        }
+        else {
+          res = "Pas de chance !</br>Il reste encore : "
+          + fast_mini_days + (fast_mini_days !== 1 ? " jours." : "jour.") + "Si ça va vite au premier tour des législatives."
+          + mini_end_of_macrony_day + (mini_end_of_macrony_day !== 1 ? " jours." : "jour.") + "Si fait deux tours aux législatives."
+          + "Sinon pas le choix, ça sera " + days + (days !== 1 ? " jours." : "jour.")
+          + "\nÇa vous épates hein ?"
+        }
 
         document.getElementsByTagName("h1")[0].innerHTML = res
       }
