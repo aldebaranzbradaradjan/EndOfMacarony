@@ -49,8 +49,8 @@
         var one_day = 1000 * 60 * 60 * 24
         var present_date = new Date()
         var end_of_macrony_day = new Date(2027, 5, 14, 20, 0, 0)
-        var fast_mini_end_of_macrony_day = new Date(2024, 6, 30, 20, 0, 0)
-        var mini_end_of_macrony_day = new Date(2024, 7, 7, 20, 0, 0)
+        var fast_mini_end_of_macrony_day = new Date(2024, 5, 30, 20, 0, 0)
+        var mini_end_of_macrony_day = new Date(2024, 6, 7, 20, 0, 0)
         var days = (Math.round(end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
         var fast_mini_days = (Math.round(fast_mini_end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
         var mini_days = (Math.round(mini_end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
