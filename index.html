@@ -49,10 +49,8 @@
         var one_day = 1000 * 60 * 60 * 24
         var present_date = new Date()
         var end_of_macrony_day = new Date(2027, 4, 14, 20, 0, 0)
-        var fast_mini_end_of_macrony_day = new Date(2024, 5, 30, 20, 0, 0)
         var mini_end_of_macrony_day = new Date(2024, 6, 7, 20, 0, 0)
         var days = (Math.round(end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
-        var fast_mini_days = (Math.round(fast_mini_end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
         var mini_days = (Math.round(mini_end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
         var res;
 
@@ -64,8 +62,7 @@
         }
         else {
           res = "Pas de chance !</br>Il reste encore du temps à passer ensemble. C'est notre projet après tout.<br><br>"
-          + "Si ça va vite au premier tour des législatives : " + fast_mini_days + (fast_mini_days !== 1 ? " jours." : "jour.") + "<br>"
-          + "Si on fait deux tours aux législatives : " + mini_days + (mini_days !== 1 ? " jours." : "jour.") + "<br>"
+          + "Si ça a lieu pendant les élections législatives, " + mini_days + (mini_days !== 1 ? " jours." : "jour.") + "<br>"
           + "Sinon pas le choix, ça sera " + days + (days !== 1 ? " jours." : "jour.") + " (à la louche)"
           + "<br><br>Ça vous épates hein ?"
         }
