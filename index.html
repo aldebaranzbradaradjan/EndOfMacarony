@@ -49,22 +49,36 @@
         var one_day = 1000 * 60 * 60 * 24
         var present_date = new Date()
         var end_of_macrony_day = new Date(2027, 4, 14, 20, 0, 0)
-        var mini_end_of_macrony_day = new Date(2024, 6, 7, 20, 0, 0)
+        var mini_end_of_macrony_day = new Date(2027, 4, 14, 20, 0, 0)
         var days = (Math.round(end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
         var mini_days = (Math.round(mini_end_of_macrony_day.getTime() - present_date.getTime()) / (one_day)).toFixed(0)
         var res;
 
         var good_result = true
-        
+
+        var randomLine = [
+            "Ça vous épate hein ?",
+            "Courage, fuyons !",
+            "Au fond du fun !",
+            "On aurait dû mettre un compte à rebours géant sur la Tour Eiffel.",
+            "Patience est mère de famille, paraît-il.",
+            "Le plus dur dans un mandat, c'est les 5 dernière années.",
+            "Quand je pense qu'à la place on pourrait avoir Valérie Pécresse...",
+            "Je pense, donc tu suis.",
+            "J'aimerais terminer sur un message d'espoir. Je n'en ai pas. En échange, est-ce que deux messages de désespoir vous iraient ?"
+        ];
+
+        // Sélection aléatoire d'une phrase
+        var line = randomLine[Math.floor(Math.random() * randomPhrases.length)];
+    
         if (mini_days <= 0) {
           res = "Enfin ! C'est fini, débouchez le champagne !<br>Ceci dit, ça dépend qui le remplace, j'espère que...<br>"
             + (good_result ? "Ah en fait ça va !" : "Ah m***e !")
         }
         else {
           res = "Pas de chance !</br>Il reste encore du temps à passer ensemble. C'est notre projet après tout.<br><br>"
-          + "Si ça a lieu pendant les élections législatives, " + mini_days + (mini_days !== 1 ? " jours." : "jour.") + "<br>"
-          + "Sinon pas le choix, ça sera " + days + (days !== 1 ? " jours." : "jour.") + " (à la louche)"
-          + "<br><br>Ça vous épates hein ?"
+          + "Pas le choix, ça sera " + days + (days !== 1 ? " jours." : "jour.") + " (à la louche)"
+          + "<br><br>" + line
         }
 
         document.getElementsByTagName("h1")[0].innerHTML = res
